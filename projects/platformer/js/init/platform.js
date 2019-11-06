@@ -10,11 +10,11 @@
      * 
      * GOAL: Add as many platforms necessary to make your level challenging.
      * 
-     * Use the platform.create() method to create platforms for the level. 
+     * Use the createPlatform Function to create platforms for the level. 
      * 
-     * platform.create() takes these arguments:
+     * createPlatform() takes these arguments:
      *      
-     *      platform.create(x, y, scaleX, scaleY);
+     *      createPlatform(x, y, scaleX, scaleY);
      * 
      *      x: The x coordineate for the platform.
      *      y: The y coordineate for the platform.
@@ -23,7 +23,9 @@
      *      scaleY: OPTIONAL The scale factor on the y-axis, this value will 
      *              stretch the platform in height.
      */ 
-    platform.init = function(game) {
+    function init(game) {
+        let createPlatform = platform.create;
+
         ////////////////////////////////////////////////////////////////////////
         // ALL YOUR CODE GOES BELOW HERE ///////////////////////////////////////
         
@@ -32,17 +34,18 @@
          * asset, giving it a scaleX and scaleY of 2 will stretch it across the 
          * bottom of the game.
          */
-      
+        createPlatform(0, game.world.height - 32, 3, 2);    // DO NOT DELETE
 
         // example:
-        platform.create(500, 600);
-        platform.create(400, 500);
-        platform.create(250, 400);
-        platform.create(100, 300);
-      
-
-
+        createPlatform(400, 500);
+        createPlatform(500, 300);
+        createPlatform(100, 400);
+        createPlatform(200, 200);
+        createPlatform(300, 600); 
+        
+        
         // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
-    };
+    }
+    platform.init = init;
 })(window);
